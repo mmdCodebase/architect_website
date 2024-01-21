@@ -22,7 +22,8 @@
   "description": "https://github.com/mui/material-ui/blob/v5.15.4/docs/data/material/components/tabs/LabTabs.js",
   "devDependencies": {
     "gh-pages": "^6.1.1",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "@babel/plugin-proposal-private-property-in-object": "^1.0.0"
   },
   "browserslist": {
     "production": [
