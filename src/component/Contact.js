@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
-
+import { useForm } from '@formspree/react';
 import { makeStyles } from '@mui/styles';
-
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
-
 import contactImg from '../assets/images/main/contactimg1.jpg';
-
 
 const useStyles = makeStyles((theme) => ({
 
@@ -44,18 +41,16 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-
+const SuccessMessage = () => {
+  return <p style={{color: 'green'}}>Thanks for contacting us!</p>;
+};
 
 export default function Contact() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    //
-  };
+  const [state, handleSubmit] = useForm("myyrkyej");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -63,69 +58,151 @@ export default function Contact() {
 
   const classes = useStyles();
 
+  const handleFormReset = () => {
+    setFname("");
+    setLname("");
+    setEmail("");
+    setMessage("");
+  };
+
   return (
     <div>
       <div className="contact-image">
-        <img src={contactImg} />
+        <img src={contactImg} alt="Contact" />
       </div>
       <Box
         sx={{
-          // display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // minHeight: `calc(100vh - 188px)`,
         }}
-         className={classes.contactForm}
+        className={classes.contactForm}
       >
-
         <Box sx={{ p: 2 }}>
           <h1 style={{ textAlign: "center" }}>Contact Us</h1>
 
-          <form className={classes.formTag} onSubmit={handleSubmit}>
-            <div style={{ padding: '3%' }}>
-              <TextField
-                fullWidth
-                label="Frist Name"
-                value={fname}
-                onChange={(e) => setFname(e.target.value)}
-                margin="normal"
-                style={{ width: "49%", marginRight: '1%' }}
-                required
-              />
-              <TextField
-                fullWidth
-                label="Last Name"
-                value={lname}
-                onChange={(e) => setLname(e.target.value)}
-                margin="normal"
-                style={{ width: "49%", marginLeft: '1%' }}
-                required
-              />
-              <TextField
-                fullWidth
-                label="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                margin="normal"
-                required
-                type="email"
-              />
-              <TextField
-                fullWidth
-                label="Message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                margin="normal"
-                required
-                multiline
-                rows={4}
-              />
-              <Button variant="contained" type="submit" sx={{ mt: 2, backgroundColor: 'black' }} endIcon={<SendIcon />}>
-                Submit
-              </Button>
-            </div>
-          </form>
-
+          {state.succeeded ? (
+            <>
+              
+              <form className={classes.formTag} onSubmit={handleSubmit}>
+                <div style={{ padding: '3%' }}>
+                  <TextField
+                    fullWidth
+                    label="First Name"
+                    value={fname}
+                    onChange={(e) => setFname(e.target.value)}
+                    margin="normal"
+                    style={{ width: "49%", marginRight: '1%' }}
+                    required
+                    id="first-name"
+                    name="first-name"
+                  />
+                  <TextField
+                    fullWidth
+                    label="Last Name"
+                    value={lname}
+                    onChange={(e) => setLname(e.target.value)}
+                    margin="normal"
+                    style={{ width: "49%", marginLeft: '1%' }}
+                    required
+                    id="last-name"
+                    name="last-name"
+                  />
+                  <TextField
+                    fullWidth
+                    label="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    margin="normal"
+                    required
+                    type="email"
+                    id="email"
+                    name="email"
+                  />
+                  <TextField
+                    fullWidth
+                    label="Message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    margin="normal"
+                    required
+                    multiline
+                    rows={4}
+                    id="message"
+                    name="message"
+                  />
+                  <Button
+                    variant="contained"
+                    type="submit"
+                    sx={{ mt: 2, backgroundColor: 'black' }}
+                    endIcon={<SendIcon />}
+                  >
+                    Submit
+                  </Button>
+                  <SuccessMessage />
+                </div>
+                
+              </form>
+            </>
+          ) : (
+            <form className={classes.formTag} onSubmit={handleSubmit}>
+              <div style={{ padding: '3%' }}>
+                <TextField
+                  fullWidth
+                  label="First Name"
+                  value={fname}
+                  onChange={(e) => setFname(e.target.value)}
+                  margin="normal"
+                  style={{ width: "49%", marginRight: '1%' }}
+                  required
+                  id="first-name"
+                  name="first-name"
+                />
+                <TextField
+                  fullWidth
+                  label="Last Name"
+                  value={lname}
+                  onChange={(e) => setLname(e.target.value)}
+                  margin="normal"
+                  style={{ width: "49%", marginLeft: '1%' }}
+                  required
+                  id="last-name"
+                  name="last-name"
+                />
+                <TextField
+                  fullWidth
+                  label="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  margin="normal"
+                  required
+                  type="email"
+                  id="email"
+                  name="email"
+                />
+                <TextField
+                  fullWidth
+                  label="Message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  margin="normal"
+                  required
+                  multiline
+                  rows={4}
+                  id="message"
+                  name="message"
+                />
+                <Button
+                  variant="contained"
+                  type="submit"
+                  sx={{ mt: 2, backgroundColor: 'black' }}
+                  endIcon={<SendIcon />}
+                >
+                  Submit
+                </Button>
+              </div>
+            </form>
+          )}
+          
           <div className={classes.contactInfos}>
             <div style={{ padding: '3% 10%' }}>
               <div>
