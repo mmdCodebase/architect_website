@@ -14,6 +14,7 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
+import ReactTyped from "react-typed";
 
 //Other pages
 import Gallery from './Gallery';
@@ -104,7 +105,17 @@ const useStyles = makeStyles((theme) => ({
         '@media (max-width:528px)': {
             minHeight: '250px',
         },
-    }
+    },
+    fadeInImage: {
+        transition: 'opacity 3.5s ease', // Adjust the transition effect as needed
+        opacity: 1,
+        '&.fade-enter': {
+            opacity: 0,
+        },
+        '&.fade-enter-active': {
+            opacity: 1,
+        },
+    },
 }));
 
 
@@ -130,25 +141,12 @@ function SwipeableTextMobileStepper() {
 
     return (
         <Box sx={{ width: "100%", flexGrow: 1 }}>
-            <Paper
-                square
-                elevation={0}
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    height: 50,
-                    pl: 2,
-                    bgcolor: 'background.default',
-                    display: 'none',
-                }}
-            >
-            </Paper>
             <AutoPlaySwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={activeStep}
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
-                interval={5000}
+                interval={7000}
                 sx={{
                     overflow: 'hidden',
                     '& > div': {
@@ -157,22 +155,27 @@ function SwipeableTextMobileStepper() {
                 }}
             >
                 {images.map((step, index) => (
-                    <div key={step.label}>
-                        {Math.abs(activeStep - index) <= 2 ? (
-                            <Box
-                                component="img"
-                                sx={{
-                                    maxHeight: '730px',
-                                    objectFit: 'cover',
-                                    display: 'block',
-                                    // maxWidth: 400,
-                                    overflow: 'hidden',
-                                    width: '100%',
-                                }}
-                                src={step.imgPath}
-                                alt={step.label}
-                            />
-                        ) : null}
+                    <div key={`${step.label}_${index}`}>
+                        { activeStep === index && (
+                            <h1 style={{ paddingLeft: "20px" }}><ReactTyped strings={[step.title]} typeSpeed={100} /></h1>
+                        )}
+                        <div
+                            className={`${classes.fadeInImage} ${activeStep === index ? 'fade-enter-active' : 'fade-enter'}`}
+                        >
+                            {Math.abs(activeStep - index) <= 2 ? (
+                                <Box
+                                    component="img"
+                                    sx={{
+                                        maxHeight: '1000px',
+                                        objectFit: 'cover',
+                                        display: 'block',
+                                        width: '100%',
+                                    }}
+                                    src={step.imgPath}
+                                    alt={step.label}
+                                />
+                            ) : null}
+                        </div>
                     </div>
                 ))}
             </AutoPlaySwipeableViews>
@@ -211,61 +214,17 @@ function SwipeableTextMobileStepper() {
 }
 
 
+
+
 export default function Home() {
     const classes = useStyles();
-
-    // Define the dataText array
-    const dataText = ["Your Facade, Our Canvas", "Your Exterior, Our Expression", "Your Architecture, Our Artsitry"];
-
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    useEffect(() => {
-
-        function typeWriter(text, i, fnCallback) {
-            const element = document.getElementById("changedTitie");
-            if (element) {
-                if (i < text.length) {
-                    element.innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
-                    setTimeout(() => {
-                        typeWriter(text, i + 1, fnCallback);
-                    }, 100);
-                } else if (typeof fnCallback === 'function') {
-                    setTimeout(fnCallback, 700);
-                }
-            }
-        }
-
-        function startTextAnimation(i) {
-            // Check if dataText[i] is defined
-            if (dataText[i]) {
-                if (i < dataText[i].length) {
-                    typeWriter(dataText[i], 0, () => {
-                        setTimeout(function () {
-                            startTextAnimation(i + 1);
-                        }, 2000);
-                    });
-                } else {
-                    // If the current text is finished, start the next text
-                    startTextAnimation(i + 1);
-                }
-            } else {
-                // If dataText[i] is undefined, restart the animation from the beginning
-                setTimeout(() => {
-                    startTextAnimation(0);
-                }, 3000);
-            }
-        }
-
-        startTextAnimation(0);
-    }, []); // empty dependency array to run the effect only once when the component mounts
-
     return (
         <div className='home-content'>
-
-            <h1 id="changedTitie">Your Architecture, Our Artsitry</h1>
             <SwipeableTextMobileStepper style={{ width: "100%" }} />
             <div className='about-us'>
                 <h1 className='home-titles'>About Us</h1>
@@ -336,7 +295,5 @@ export default function Home() {
                 </div>
             </div>
         </div>
-
-
     );
 }

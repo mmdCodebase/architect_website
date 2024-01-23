@@ -8,6 +8,12 @@ body {
     margin: 0;
     padding-top: 72px;
 }
+h1 {
+    font-size: 3rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
 h1, h2, h3 {
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
@@ -157,18 +163,15 @@ h1, h2, h3 {
     text-align: left;
 }
 
-.img-container {
-    position: relative;
-    width: 100%;
-    padding-top: 55%;
-    /* Maintain 1:1 aspect ratio for the container */
-    overflow: hidden;
-    cursor: pointer;
-}
-
 .gallery-img-item p {
-    font-weight: bold;
+    width: max-content;
+    display: inline-block;
     padding: 0 15px;
+    font-size: 16px;
+    color: #000;
+}
+.gallery-img-item .detail-des {
+    float: right;
 }
 
 .about-us,
@@ -209,6 +212,13 @@ h1, h2, h3 {
 .home-titles:hover::before {
     width: 100%;
 }
+.img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 55%;
+    overflow: hidden;
+    cursor: pointer;
+}
 
 .img-container img {
     position: absolute;
@@ -218,6 +228,7 @@ h1, h2, h3 {
     height: 100%;
     object-fit: cover;
 }
+
 .border-action img{
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -473,4 +484,16 @@ h1, h2, h3 {
     background-color: red;
     border-radius: 50%;
     cursor: ew-resize;
+  }
+
+  .custom-modal {
+    width: 400px;
+    padding: 30px 20px 20px 20px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
   }

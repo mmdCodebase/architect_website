@@ -9,8 +9,6 @@ import AnimatedCardStacks from "./Animation";
 import { GalleryImg, images } from './Data';
 
 const useStyles = makeStyles((theme) => ({
-
-
     galleryTab: {
         textAlign: 'center',
         margin: 'auto',
@@ -48,18 +46,18 @@ export default function ProjectDetail() {
             <div className='project-detail'>
                 <div style={{ padding: '20px' }}>
                     <h1>{imageDetails.title}</h1>
-                    <p>{imageDetails.description}</p>
+                    <BeforeAfterImg id={imageDetails.id} imgSrc={imageDetails.img} groupId={imageDetails.groupId} />
+                    <p style={{fontSize: '18px'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {imageDetails.description}</p>
                 </div>
-                <BeforeAfterImg imgSrc={imageDetails.img} groupId={imageDetails.groupId} />
             </div>
             <div className='project-more'>
-                <h2>More designs for this project</h2>
+                <h2>more pictures for the project.</h2>
                 <AnimatedCardStacks id={imageDetails.id} />
 
             </div>
             <div className='other-projects'>
                 <h2>Other projects</h2>
-                <ImportedImg category={imageDetails.category} featured="yes" time="after" index="1" />
+                <ImportedImg category={imageDetails.category} featured="" time="after" index="1" />
             </div>
         </Box>
     );

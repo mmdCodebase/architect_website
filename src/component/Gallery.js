@@ -25,7 +25,9 @@ const useStyles = makeStyles((theme) => ({
     },
     galleryTabBtn: {
         width: '256px',
-
+        fontWeight: '400',
+        fontSize: '18px',
+        fontFamily: "'Oswald', sans-serif",
         '@media (max-width:768px)': {
             width: '33.33%',
         },
@@ -83,22 +85,22 @@ export default function Gallery() {
     return (
         <Box sx={{ maxWidth: '1200px', typography: 'body1', textAlign: "center", margin: "auto" }}>
             <TabContext value={valueGallery}>
-                <h1>Our Projects</h1>
+                <h1 style={{paddingTop: '35px'}}>Our Projects</h1>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChangeGallery} aria-label="lab API tabs example" className={classes.galleryTab}>
                         <Tab label="All" value="all" className={classes.galleryTabBtn} />
-                        <Tab label="Commercial" value="commercial" className={classes.galleryTabBtn} />
-                        <Tab label="resident" value="resident" className={classes.galleryTabBtn} />
+                        <Tab label="Commercial" value="Commercial" className={classes.galleryTabBtn} />
+                        <Tab label="Residential" value="Residential" className={classes.galleryTabBtn} />
                     </TabList>
                 </Box>
                 <TabPanel value="all" style={{ padding: 0 }}>
                     <ImportedImg category="" featured="" time="after" index="1"/>
                 </TabPanel>
-                <TabPanel value="commercial" style={{ padding: 0 }}>
-                    <ImportedImg category="commercial" featured="" time="after" index="1"/>
+                <TabPanel value="Commercial" style={{ padding: 0 }}>
+                    <ImportedImg category="Commercial" featured="" time="after" index="1"/>
                 </TabPanel>
-                <TabPanel value="resident" style={{ padding: 0 }}>
-                    <ImportedImg category="resident" featured="" time="after" index="1"/>
+                <TabPanel value="Residential" style={{ padding: 0 }}>
+                    <ImportedImg category="Residential" featured="" time="after" index="1"/>
                 </TabPanel>
 
             </TabContext>

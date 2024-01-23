@@ -20,7 +20,7 @@ const ImportedImg = ({ category, featured, time, index }) => {
     return (
         <div className='gallery-grid'>
             {filteredImages.map((item, index) => (
-                <Link to={`/projectDetail/${item.id}`} >
+                <Link key={index} to={`/projectDetail/${item.id}`} >
                     <div className='gallery-img-item' key={index}>
                         <div className='img-container border-action'>
                             <img
@@ -31,7 +31,8 @@ const ImportedImg = ({ category, featured, time, index }) => {
                                 }}
                             />
                         </div>
-                        <p>{item.title}</p>
+                        <p className='detail-title'>{item.title}</p>
+                        <p className='detail-des'>{item.category}</p>
                     </div>
                 </Link>
             ))}
