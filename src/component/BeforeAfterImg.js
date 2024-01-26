@@ -8,6 +8,7 @@ import { GalleryImg } from './Data';
 // Import your image files
 import img2 from "../assets/images/after/img2-after.jpeg";
 import img3 from "../assets/images/after/img3-after.jpeg";
+import { textAlign } from '@mui/system';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -72,7 +73,7 @@ export default function BeforeAfterImg({ id, imgSrc, groupId }) {
       setImageHeight(tempImg.height);
       setImageWidth(tempImg.width);
     };
-  }, [groupId]);
+  }, [id]);
 
   // Check if bgImages[0] exists before accessing img property
   const backgroundImage = bgImages[0] ? `${bgImages[0].img}` : '';
@@ -88,7 +89,7 @@ export default function BeforeAfterImg({ id, imgSrc, groupId }) {
   } : { backgroundColor: 'lightgray' };
 
   return (
-    <div className=''>
+    <div style={{textAlign: 'center'}}>
       {bgImages[0] && <ToggleButtonGroup
         color="primary"
         value={alignment}
@@ -96,7 +97,7 @@ export default function BeforeAfterImg({ id, imgSrc, groupId }) {
         onChange={handleChange}
         aria-label="Platform"
         className={classes.toggleBtn}
-        style={{ float: 'right', margin: '10px' }}
+        style={{ margin: '10px' }}
       >
         <ToggleButton value="after">After</ToggleButton>
         <ToggleButton value="before">Before</ToggleButton>

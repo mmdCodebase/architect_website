@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
         bottom: '60px',
         '& button': {
             backgroundColor: 'rgba(255, 255, 255, 0.7)',
+            marginTop: '-35%',
+            '@media (max-width:1200px)': {
+                marginTop: '-45%',
+            },
             '@media (max-width:768px)': {
                 display: 'none',
             },
@@ -89,21 +93,30 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     cardHeight: {
-        minHeight: '200px',
+        minHeight: '250px',
         '@media (max-width:1200px)': {
-            minHeight: '230px',
+            minHeight: '350px',
+        },
+        '@media (max-width:1024px)': {
+            minHeight: '345px',
         },
         '@media (max-width:912px)': {
-            minHeight: '260px',
+            minHeight: '350px',
+        },
+        '@media (max-width:859px)': {
+            minHeight: '400px',
         },
         '@media (max-width:768px)': {
-            minHeight: '220px',
+            minHeight: '280px',
         },
         '@media (max-width:660px)': {
             minHeight: '200px',
         },
-        '@media (max-width:528px)': {
-            minHeight: '250px',
+        '@media (max-width:559px)': {
+            minHeight: '240px',
+        },
+        '@media (max-width:457px)': {
+            minHeight: '300px',
         },
     },
     fadeInImage: {
@@ -116,6 +129,18 @@ const useStyles = makeStyles((theme) => ({
             opacity: 1,
         },
     },
+    animatedTitle: {
+        paddingLeft: '20px',
+        '& br': {
+            display: 'none',
+        },
+        '@media (max-width:528px)': {
+            fontSize: '37px',
+            '& br': {
+                display: 'block',
+            }
+        }        
+    }
 }));
 
 
@@ -146,7 +171,7 @@ function SwipeableTextMobileStepper() {
                 index={activeStep}
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
-                interval={7000}
+                interval={3500}
                 sx={{
                     overflow: 'hidden',
                     '& > div': {
@@ -157,7 +182,7 @@ function SwipeableTextMobileStepper() {
                 {images.map((step, index) => (
                     <div key={`${step.label}_${index}`}>
                         { activeStep === index && (
-                            <h1 style={{ paddingLeft: "20px" }}><ReactTyped strings={[step.title]} typeSpeed={100} /></h1>
+                            <h1 className={classes.animatedTitle}><ReactTyped strings={[step.title]} typeSpeed={75} /></h1>
                         )}
                         <div
                             className={`${classes.fadeInImage} ${activeStep === index ? 'fade-enter-active' : 'fade-enter'}`}
@@ -166,7 +191,8 @@ function SwipeableTextMobileStepper() {
                                 <Box
                                     component="img"
                                     sx={{
-                                        maxHeight: '1000px',
+                                        maxHeight: '750px',
+                                        margin: 'auto',
                                         objectFit: 'cover',
                                         display: 'block',
                                         width: '100%',
@@ -234,7 +260,7 @@ export default function Home() {
                 <div className={classes.companyDescription}>
                     <div style={{ padding: '10px 20px' }}>
                         <h2>BlueBrass Design</h2>
-                        <p>Elevating architectural visions, <span style={{ color: 'red' }}>BlueBrass Design</span> specializes in crafting extraordinary external facades for both remodeling
+                        <p>Elevating architectural visions, BlueBrass Design specializes in crafting extraordinary external facades for both remodeling
                             old homes and new construction projects. Seamlessly blending tradition with modernity, our mission is to redefine aesthetics,
                             creating unique, magnificent designs that tell captivating stories of timeless elegance and contemporary brilliance.</p>
                         <Link to="/contact" className='custom-btn'>Contact</Link>
@@ -243,14 +269,14 @@ export default function Home() {
             </div>
 
             <div className='featured-project'>
-                <h1 className='home-titles'>Featured Projects</h1>
-                <ImportedImg category="" featured="yes" index="1" time="after" />
+                <h1 className='home-titles'>Latest Projects</h1>
+                <ImportedImg id="" category="" featured="yes" index="1" time="after" />
                 <Link to="/gallery" className='custom-btn'>See More Projects</Link>
 
             </div>
 
             <div className='our-service'>
-                <h1 className='home-titles'>Why Choose BlueBrass</h1>
+                <h1 className='home-titles'>Why Choose BlueBrass Design</h1>
                 {chooseItem.map((item, index) => (
                     <div className={classes.serviceItem} key={index}>
                         <div className='service-item-content'>
@@ -261,7 +287,7 @@ export default function Home() {
                                             <div className="hover_color_bubble"></div>
                                             <div className="solu_description">
                                                 {item.icon}
-                                                <h3>{item.title}</h3>
+                                                <h2>{item.title}</h2>
                                                 <p>{item.description}</p>
                                             </div>
                                         </div>
@@ -283,11 +309,11 @@ export default function Home() {
                     <div className={classes.setApart}>
                         {setApartItem.map((item, index) => (
                             <div key={index}>
-                                <h3>{item.title}</h3>
+                                <h2>{item.title}</h2>
                                 <p>{item.description}</p>
                             </div>
                         ))}<br />
-                        <p>Ready to elevate your space? Let's bring your vision to life with <span style={{ color: 'red' }}>BlueBrass Design!</span><br /><br />Contact us for a Consultation Today!</p>
+                        <p>Ready to elevate your space? Let's bring your vision to life with BlueBrass Design!<br /><br />Contact us for a Consultation Today!</p>
                         <Link to="/contact" className='custom-btn'>Request a Consultation</Link>
 
 

@@ -14,9 +14,6 @@ import Contact from './component/Contact';
 import ProjectDetail from './component/projectDetail';
 import logo from './assets/images/main/logo2.PNG';
 
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 
 import { makeStyles } from '@mui/styles';
@@ -88,7 +85,7 @@ export default function App() {
     setAnchorEl(null);
   };
   const handleIconClick = () => {
-    window.location.href = "https://wa.me/15167557212";
+    window.location.href = "https://wa.me/13476610899";
   };
 
   const classes = useStyles();
@@ -103,7 +100,9 @@ export default function App() {
           <div className='header'>
             <div className='header-bar'>
               <div className='logo-img'>
-                <img src={logo} alt="Logo" width='150px' />
+                <Link to="/">
+                  <img src={logo} alt="Logo" width='150px' />
+                </Link>
               </div>
               <div className={classes.mobileMenu}>
                 <Button
@@ -150,21 +149,13 @@ export default function App() {
 
           <div className='footer'>
             <div className='footer-content'>
-              <div className={classes.infoItem} style={{ width: "40%" }}>
+              <div className={classes.infoItem} style={{ width: "55%" }}>
                 <p>Get In Touch :</p>
-                <p>Email: architect@expert.com<br />Tel: +1 (234) 345 5678</p>
+                <p>Email: BlueBrassDesign@gmail.com<br />Tel: +1 (347)661-0899</p>
               </div>
               <div className={classes.infoItem} style={{ width: "30%" }}>
                 <p>Address :</p>
-                <p>123 Main Street<br />Blooklyn, NY 94158</p>
-              </div>
-              <div className={classes.infoItem}>
-                <p>Social :</p>
-                <p>
-                  <LinkedInIcon />
-                  <TwitterIcon />
-                  <FacebookIcon />
-                </p>
+                <p>1240 Hooper Avenue Toms River,<br /> NJ 08753</p>
               </div>
             </div>
           </div>

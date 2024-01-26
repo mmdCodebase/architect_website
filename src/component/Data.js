@@ -9,34 +9,19 @@ import sliderImg4 from '../assets/images/slider/slider4.jpeg';
 import sliderImg5 from '../assets/images/slider/slider5.jpeg';
 import sliderImg6 from '../assets/images/slider/slider6.jpeg';
 
-// // Featured Image
-// import img1 from "../assets/images/new_img/img1-1.jpeg";
-// import img2 from "../assets/images/new_img/img2-1.jpeg";
-// import img3 from "../assets/images/new_img/img3-1.jpeg";
-// import img4 from "../assets/images/new_img/img4-1.jpeg";
-// import img5 from "../assets/images/new_img/img5-1.jpeg";
-// import img6 from "../assets/images/new_img/img6-1.jpeg";
-// import img7 from "../assets/images/new_img/img7-1.jpeg";
-// import img8 from "../assets/images/new_img/img8-1.jpeg";
-// import img9 from "../assets/images/new_img/img9-1.jpeg";
-// import img10 from "../assets/images/new_img/img10-1.jpeg";
-// import img11 from "../assets/images/new_img/img11-1.jpeg";
-// import visionImg from "../assets/images/main/vision.png";
-
 // Icons
-
-import PersonPinCircleIcon from '@mui/icons-material/PersonPinCircle';
-import CreateIcon from '@mui/icons-material/Create';
-import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual';
-import SettingsIcon from '@mui/icons-material/Settings';
-import BuildIcon from '@mui/icons-material/Build';
+import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined';
+import OtherHousesOutlinedIcon from '@mui/icons-material/OtherHousesOutlined';
+import ViewInArIcon from '@mui/icons-material/ViewInAr';
+import FilterDramaIcon from '@mui/icons-material/FilterDrama';
+import UpdateIcon from '@mui/icons-material/Update';
+import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 
 // Images After Rebuild
 
 import img1 from "../assets/images/all/img1-1.jpeg";
-import img2 from "../assets/images/all/img1-2.jpeg";
 import img3 from "../assets/images/all/img2-1.jpeg";
-import img4 from "../assets/images/all/img2-2.jpeg";
+import img4 from "../assets/images/all/img2-before1.jpeg";
 import img5 from "../assets/images/all/img3-1.jpeg";
 import img6 from "../assets/images/all/img3-2.jpeg";
 import img7 from "../assets/images/all/img3-before1.jpeg";
@@ -59,7 +44,6 @@ import img23 from "../assets/images/all/img7-4.jpeg";
 import img24 from "../assets/images/all/img7-before1.jpeg";
 import img25 from "../assets/images/all/img8-1.jpeg";
 import img26 from "../assets/images/all/img9-1.jpeg";
-import img27 from "../assets/images/all/img9-2.jpeg";
 import img28 from "../assets/images/all/img10-1.jpeg";
 import img29 from "../assets/images/all/img10-2.jpeg";
 import img30 from "../assets/images/all/img11-1.jpeg";
@@ -97,6 +81,7 @@ import img61 from "../assets/images/all/img21-1.jpeg";
 import img62 from "../assets/images/all/img21-2.jpeg";
 import img63 from "../assets/images/all/img22-1.jpeg";
 import img64 from "../assets/images/all/img22-2.jpeg";
+import img65 from "../assets/images/all/img23-1.jpeg";
 
 export const GalleryImg = [
     { 
@@ -111,15 +96,15 @@ export const GalleryImg = [
         description: "The initial house, equipped with complete plans and ordered windows, presented a dissonance in its curb appeal as it appeared uncentered and lacked a cohesive aesthetic. Responding to the client's desire for a more beautiful facade, our team diligently embarked on a creative endeavor to redesign and enhance the exterior. Through thoughtful planning and meticulous attention to detail, we crafted a stunning facade design that not only rectified the previous imbalance but also transformed the entire appearance of the house, imbuing it with a newfound sense of beauty and harmony.", 
     },
     { 
-        id: 2, 
-        img: img2, 
-        groupId: 1, 
-        index: '2', 
+        id: 26, 
+        img: img26, 
+        groupId: 9, 
+        index: '1',  
         title: 'Brooklyn, NY', 
         category: 'Residential', 
         featured: 'no', 
         time: 'after',
-        description: "The initial house, equipped with complete plans and ordered windows, presented a dissonance in its curb appeal as it appeared uncentered and lacked a cohesive aesthetic. Responding to the client's desire for a more beautiful facade, our team diligently embarked on a creative endeavor to redesign and enhance the exterior. Through thoughtful planning and meticulous attention to detail, we crafted a stunning facade design that not only rectified the previous imbalance but also transformed the entire appearance of the house, imbuing it with a newfound sense of beauty and harmony.", 
+        description: "", 
     },
     { 
         id: 3, 
@@ -140,7 +125,7 @@ export const GalleryImg = [
         title: 'Lakewood, NJ', 
         category: 'Residential', 
         featured: 'no', 
-        time: 'after',
+        time: 'before',
         description: "Tasked with retaining the structure of the original facade, the client aimed to replace the garage with an additional room and introduce new materials for a refreshed appearance. Our team skillfully integrated these changes, seamlessly blending the old and new elements to give the house a contemporary and revitalized aesthetic.", 
     },
     { 
@@ -148,7 +133,7 @@ export const GalleryImg = [
         img: img5, 
         groupId: 3, 
         index: '1',  
-        title: 'Resident 4', 
+        title: 'Lakewood, NJ', 
         category: 'Residential', 
         featured: 'yes', 
         time: 'after',
@@ -159,7 +144,7 @@ export const GalleryImg = [
         img: img6, 
         groupId: 3, 
         index: '2',  
-        title: 'Resident 4', 
+        title: 'Lakewood, NJ', 
         category: 'Residential', 
         featured: 'no', 
         time: 'after',
@@ -170,7 +155,7 @@ export const GalleryImg = [
         img: img7, 
         groupId: 3, 
         index: '3',  
-        title: 'Resident 4', 
+        title: 'Lakewood, NJ', 
         category: 'Residential', 
         featured: 'no', 
         time: 'before',
@@ -183,7 +168,7 @@ export const GalleryImg = [
         index: '1',  
         title: 'Orangeburg, NY', 
         category: 'Commercial', 
-        featured: 'no', 
+        featured: 'yes', 
         time: 'after',
         description: "We were approached by a team of investors who purchased an old office building with the goal of transforming its rundown appearance into a modern and appealing space for leasing. Despite the challenge, we exceeded their expectations by infusing the property with a contemporary flair that not only met but surpassed their high standards, creating an inviting and desirable workspace.", 
     },
@@ -214,7 +199,7 @@ export const GalleryImg = [
         img: img11, 
         groupId: 5, 
         index: '1',  
-        title: 'North jersey ', 
+        title: 'Colonia, NJ ', 
         category: 'Commercial', 
         featured: 'yes', 
         time: 'after',
@@ -225,7 +210,7 @@ export const GalleryImg = [
         img: img12, 
         groupId: 5, 
         index: '2',  
-        title: 'North jersey ', 
+        title: 'Colonia, NJ ', 
         category: 'Commercial', 
         featured: 'no', 
         time: 'after',
@@ -236,7 +221,7 @@ export const GalleryImg = [
         img: img13, 
         groupId: 5, 
         index: '3',  
-        title: 'North jersey ', 
+        title: 'Colonia, NJ ', 
         category: 'Commercial', 
         featured: 'no', 
         time: 'after',
@@ -247,7 +232,7 @@ export const GalleryImg = [
         img: img14, 
         groupId: 5, 
         index: '4',  
-        title: 'North jersey ', 
+        title: 'Colonia, NJ ', 
         category: 'Commercial', 
         featured: 'no', 
         time: 'before',
@@ -258,8 +243,8 @@ export const GalleryImg = [
         img: img15, 
         groupId: 5, 
         index: '5',  
-        title: 'North jersey ', 
-        category: 'Commercial', 
+        title: 'Colonia, NJ ', 
+        category: 'Commercial',     
         featured: 'no', 
         time: 'before',
         description: "Turning a dilapidated strip mall into a high-end upscale grocery store seemed challenging, but we approached it with confidence and flair. The owners could not believe the magical transformation.", 
@@ -269,7 +254,7 @@ export const GalleryImg = [
         img: img16, 
         groupId: 5, 
         index: '6',  
-        title: 'North jersey ', 
+        title: 'Colonia, NJ ', 
         category: 'Commercial', 
         featured: 'no', 
         time: 'before',
@@ -280,7 +265,7 @@ export const GalleryImg = [
         img: img17, 
         groupId: 6, 
         index: '1',  
-        title: 'Commercial 6', 
+        title: 'Linden, NJ', 
         category: 'Commercial', 
         featured: 'no', 
         time: 'after',
@@ -291,7 +276,7 @@ export const GalleryImg = [
         img: img18, 
         groupId: 6, 
         index: '2',  
-        title: 'Commercial 6', 
+        title: 'Linden, NJ', 
         category: 'Commercial', 
         featured: 'no', 
         time: 'after',
@@ -302,7 +287,7 @@ export const GalleryImg = [
         img: img19, 
         groupId: 6, 
         index: '3',  
-        title: 'Commercial 6', 
+        title: 'Linden, NJ', 
         category: 'Commercial', 
         featured: 'no', 
         time: 'before',
@@ -373,28 +358,6 @@ export const GalleryImg = [
         featured: 'yes', 
         time: 'after',
         description: "Midway through the construction, the homeowners approached us with concerns about the facade, having realized it didn't meet their liking. With windows already installed, we had to act swiftly to ensure a design they would love. Working closely with the family, we collaborated to turn their vision into reality. The end result was a resounding success.", 
-    },
-    { 
-        id: 26, 
-        img: img26, 
-        groupId: 9, 
-        index: '1',  
-        title: 'Brooklyn, NY', 
-        category: 'Residential', 
-        featured: 'no', 
-        time: 'after',
-        description: "No description", 
-    },
-    { 
-        id: 27, 
-        img: img27, 
-        groupId: 9, 
-        index: '2',  
-        title: 'Brooklyn, NY', 
-        category: 'Residential', 
-        featured: 'no', 
-        time: 'after',
-        description: "No description", 
     },
     { 
         id: 28, 
@@ -502,7 +465,7 @@ export const GalleryImg = [
         index: '1',  
         title: 'Linden, NJ', 
         category: 'Residential', 
-        featured: 'yes', 
+        featured: 'no', 
         time: 'after',
         description: "When this family set out to build their home, they had architectural plans but wanted a facade that felt uniquely theirs—distinctive yet not too bold. After a few sketch sessions, we created a design that matched their vision. The final result? A homey and welcoming facade that truly reflects their dream.", 
     },
@@ -622,7 +585,7 @@ export const GalleryImg = [
         groupId: 17, 
         index: '1',  
         title: 'Lakewood, NJ', 
-        category: 'Residential', 
+        category: 'Commercial', 
         featured: 'no', 
         time: 'after',
         description: "This school administrator bought an old, neglected building that looked rundown. Despite tight finances, the aim was to make it clean and new, fitting for a private boys' school. We worked within budget, and they were really excited about the refreshed feel of the building.", 
@@ -634,14 +597,14 @@ export const GalleryImg = [
         index: '1',  
         title: 'South Jersey, NJ', 
         category: 'Commercial', 
-        featured: 'no', 
+        featured: 'yes', 
         time: 'after',
         description: "We worked our magic, turning a rundown warehouse into top-notch Class A office space. The investors were thrilled with the stunning transformation, and the excitement peaked when the space was leased out in no time.", 
     },
     { 
         id: 50, 
         img: img50, 
-        groupId: 18, 
+        groupId: 18,
         index: '2',  
         title: 'South Jersey, NJ', 
         category: 'Commercial', 
@@ -676,7 +639,7 @@ export const GalleryImg = [
         img: img53, 
         groupId: 19, 
         index: '1',  
-        title: 'S Philadelphia, PA', 
+        title: 'S Philadelphia', 
         category: 'Residential', 
         featured: 'no', 
         time: 'after',
@@ -687,7 +650,7 @@ export const GalleryImg = [
         img: img54, 
         groupId: 19, 
         index: '2',  
-        title: 'S Philadelphia, PA', 
+        title: 'S Philadelphia', 
         category: 'Residential', 
         featured: 'no', 
         time: 'after',
@@ -698,7 +661,7 @@ export const GalleryImg = [
         img: img55, 
         groupId: 19, 
         index: '3',  
-        title: 'S Philadelphia, PA', 
+        title: 'S Philadelphia', 
         category: 'Residential', 
         featured: 'no', 
         time: 'after',
@@ -709,7 +672,7 @@ export const GalleryImg = [
         img: img56, 
         groupId: 19, 
         index: '4',  
-        title: 'S Philadelphia, PA', 
+        title: 'S Philadelphia', 
         category: 'Residential', 
         featured: 'no', 
         time: 'after',
@@ -720,7 +683,7 @@ export const GalleryImg = [
         img: img57, 
         groupId: 19, 
         index: '5',  
-        title: 'S Philadelphia, PA', 
+        title: 'S Philadelphia', 
         category: 'Residential', 
         featured: 'no', 
         time: 'before',
@@ -786,7 +749,7 @@ export const GalleryImg = [
         img: img63, 
         groupId: 22, 
         index: '1',  
-        title: 'North Jersey, NJ', 
+        title: 'North Jersey', 
         category: 'Commercial', 
         featured: 'no', 
         time: 'after',
@@ -797,11 +760,22 @@ export const GalleryImg = [
         img: img64, 
         groupId: 22, 
         index: '2',  
-        title: 'North Jersey, NJ', 
+        title: 'North Jersey', 
         category: 'Commercial', 
         featured: 'no', 
         time: 'after',
         description: "Revitalizing a communal building on a tight budget, we faced the challenge of its irregular structure. Despite financial constraints, we proposed a clean and modern look that garnered unanimous approval from all parties involved.", 
+    },
+    { 
+        id: 65, 
+        img: img65, 
+        groupId: 23, 
+        index: '1',  
+        title: 'Linden, NJ', 
+        category: 'Commercial', 
+        featured: 'yes', 
+        time: 'after',
+        description: "", 
     },
 
 ];
@@ -809,30 +783,37 @@ export const GalleryImg = [
 
 export const chooseItem = [
     {
-        title: 'Personalized Consultation',
-        description: 'Tailoring designs to your unique style and preferences',
-        icon: <PersonPinCircleIcon />
+        title: 'Crafting Dreams, Not Breaking Banks',
+        description: "We believe in crafting something beautiful that fits snugly within your budget. Your dream design? Let's make it happen without the hefty price tag",
+        icon: <SavingsOutlinedIcon />
     },
     {
-        title: 'Artistic Sketches',
-        description: 'Witness your ideas come to life through vibrant and creative sketches',
-        icon: <CreateIcon />
+        title: 'Your Home, Your Narrative',
+        description: "Your home isn't just a place; it's your story. Our personalized consultations are about understanding the chapters of your life and weaving them into a design that feels uniquely yours.",
+        icon: <OtherHousesOutlinedIcon />
     },
     {
-        title: 'Realistic HD Renderings',
-        description: 'Providing realistic high-definition renderings for a visual preview of your dream facade',
-        icon: <PhotoSizeSelectActualIcon />
+        title: 'Your Vision, Our Artistry',
+        description: "Imagine your ideas taking artistic form. Our sketches aren't just drawings; they're a canvas where your vision meets our artistry, creating a design that resonates with you on a personal level.",
+        icon: <ViewInArIcon />
     },
     {
-        title: 'Efficient Planning',
-        description: 'Streamlined materials and specs for a seamless construction process',
-        icon: <SettingsIcon />
+        title: 'See Your Tomorrow Today',
+        description: "Ever wished you could see the future? Our HD renderings give you a glimpse of your dream space before it becomes a reality. It's like time-traveling into a home that feels just right.",
+        icon: <FilterDramaIcon />
     },
     {
-        title: 'Guidance Through Construction',
-        description: 'We are your partners from concept to completion, ensuring every detail aligns with your dream facade',
-        icon: <BuildIcon />
+        title: 'Staying Stylish Together',
+        description: "Your home deserves to be on the cutting edge. We keep things fresh with the latest trends and materials, ensuring your space is not just a reflection of today but a preview of what's to come.",
+        icon: <UpdateIcon />,
     },
+    {
+        title: 'Teamwork Makes the Dream Work',
+        description: "We're not just designers; we're your partners. Together, we'll work as a team to turn your dream into a tangible masterpiece. Your vision, our expertise – let's make it a reality.",
+        icon: <HandshakeOutlinedIcon />,
+    }
+    
+
 ];
 
 
@@ -848,38 +829,39 @@ export const images = [
         label: 'Archetect image 1',
         imgPath: sliderImg1,
         displayTime: 7000,
-        title: 'Your Facade, Our Canvas'
+        title: `Your Facade, <br />Our Canvas`
     },
     {
         label: 'Archetect image 2',
         imgPath: sliderImg2,
         displayTime: 7000,
-        title: 'Your Exterior, Our Expression'
+        title: 'Your Exterior, <br />Our Expression'
     },
     {
         label: 'Archetect image 3',
         imgPath: sliderImg3,
         displayTime: 7000,
-        title: 'Your Architecture, Our Artsitry'
+        title: 'Your Architecture, <br />Our Artsitry'
     },
     {
         label: 'Archetect image 4',
         imgPath: sliderImg4,
         displayTime: 7000,
-        title: 'Your Challenge, Our Artistic Brilliance'
+        title: 'Your Blueprint, <br />Our Imprint'
     },
     {
         label: 'Archetect image 5',
         imgPath: sliderImg5,
         displayTime: 7000,
-        title: 'Your Blueprint, Our Design Masterpiece'
+        title: 'Your Exterior, <br />Our Expression'
     },
     {
         label: 'Archetect image 4',
         imgPath: sliderImg6,
         displayTime: 7000,
-        title: 'Your Imagination, Our Innovation'
+        title: 'Your Imagination, <br />Our Innovation'
     },
 ];
+
 
 

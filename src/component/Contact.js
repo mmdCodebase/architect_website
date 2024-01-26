@@ -3,9 +3,6 @@ import { TextField, Button, Typography, Box, Modal } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import { useForm } from '@formspree/react';
 import { makeStyles } from '@mui/styles';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import contactImg from '../assets/images/main/contactimg1.jpg';
 
 const useStyles = makeStyles((theme) => ({
@@ -63,7 +60,7 @@ export default function Contact() {
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [state, handleSubmit] = useForm("mnqejjbj");
+  const [state, handleSubmit] = useForm("xjvngovv");
   const [successModalOpen, setSuccessModalOpen] = useState(false);
 
   useEffect(() => {
@@ -112,7 +109,7 @@ export default function Contact() {
                   handleSubmit(e);
                   handleSuccessModalOpen();
                 }}
-                action="mnqejjbj"
+                action="xjvngovv"
                 method="POST"
               >
                 <div style={{ padding: '3%' }}>
@@ -184,7 +181,7 @@ export default function Contact() {
                 handleSubmit(e);
                 handleSuccessModalOpen();
               }}
-              action="mnqejjbj"
+              action="xjvngovv"
               method="POST"
             >
               <div style={{ padding: '3%' }}>
@@ -250,19 +247,11 @@ export default function Contact() {
               <div>
                 <h2>Questions? <br /> Contact us</h2>
                 <hr />
-                <p>Email: architect@expert.com<br />Tel: +1 (234) 345 5678</p>
+                <p>Email: BlueBrassDesign@gmail.com<br />Tel: +1 (347)661-0899</p>
               </div>
               <div>
                 <p>Address :</p>
-                <p>123 Main Street<br />Blooklyn, NY 94158</p>
-              </div>
-              <div>
-                <p>Social :</p>
-                <p>
-                  <LinkedInIcon />
-                  <TwitterIcon />
-                  <FacebookIcon />
-                </p>
+                <p>1240 Hooper Avenue Toms River,<br /> NJ 08753</p>
               </div>
             </div>
           </div>

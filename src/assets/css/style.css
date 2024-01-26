@@ -2,33 +2,40 @@
     font-family: 'Spacema-Black';
     src: url('../Spacema-Font/Spacema/Spacema-Light.ttf') format('truetype');
     src: url('../Spacema-Font/Spacema/Spacema-Light.otf') format('opentype');
-  }
+}
 
 body {
     margin: 0;
     padding-top: 72px;
 }
+
 h1 {
     font-size: 3rem;
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 100;
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
+
 .logo-img {
     position: absolute;
     top: 5px;
     left: 10px;
+    cursor: pointer;
 }
 
 .menu-bar {
     float: right;
 }
+
 .whatsapp-icon {
     position: fixed;
     bottom: 20px;
@@ -36,16 +43,20 @@ h1, h2, h3 {
     z-index: 9998;
     transition: all 0.1s;
 }
+
 .whatsapp-icon img {
     filter: drop-shadow(2px 4px 5px #474747);
-}    
+}
+
 .whatsapp-icon:hover {
     bottom: 25px;
 }
+
 .whatsapp-icon:active {
     bottom: 23px;
     filter: grayscale(50%);
 }
+
 .menu-bar a {
     width: 150px;
 }
@@ -55,6 +66,7 @@ h1, h2, h3 {
     height: 70px;
     background-color: #f1f1f1;
 }
+
 .header {
     position: fixed;
     z-index: 9999;
@@ -113,10 +125,11 @@ h1, h2, h3 {
     background-color: rgb(39, 39, 39);
     color: white;
     padding: 30px;
+    margin-top: 50px;
 }
 
 .footer-content {
-    max-width: 800px;
+    max-width: 550px;
     margin: auto;
 }
 
@@ -170,6 +183,7 @@ h1, h2, h3 {
     font-size: 16px;
     color: #000;
 }
+
 .gallery-img-item .detail-des {
     float: right;
 }
@@ -179,21 +193,28 @@ h1, h2, h3 {
 .our-service,
 .vision-content {
     padding: 10px 40px 50px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
 }
+
 .other-projects {
     padding-left: 20px;
+    text-align: center;
 }
+.other-projects h2 {
+    text-align: left;
+}
+
 .vision-content {
     margin-top: 50px;
 }
+
 .featured-project {
     margin-bottom: 50px;
 }
+
 .home-titles {
     position: relative;
-    width: max-content;
     cursor: pointer;
     padding-bottom: 5px;
 }
@@ -212,6 +233,7 @@ h1, h2, h3 {
 .home-titles:hover::before {
     width: 100%;
 }
+
 .img-container {
     position: relative;
     width: 100%;
@@ -229,11 +251,12 @@ h1, h2, h3 {
     object-fit: cover;
 }
 
-.border-action img{
+.border-action img {
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     transition: all 1s;
 }
+
 .border-action img:hover {
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -277,7 +300,8 @@ h1, h2, h3 {
 
 .contact-image img {
     width: 100%;
-    height: 300px;
+    max-height: 450px;
+    min-height: 175px;
     object-fit: cover;
 }
 
@@ -298,6 +322,7 @@ h1, h2, h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 }
 
 .solution_cards_box .solution_card {
@@ -431,14 +456,17 @@ h1, h2, h3 {
 .selected-img {
     padding: 30px 0;
 }
+
 .selected-img img {
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
+
 .selected-img div {
     width: 100%;
 }
+
 .project-more {
     /* max-width: 500px; */
     padding-left: 20px;
@@ -452,28 +480,28 @@ h1, h2, h3 {
     position: relative;
     display: inline-block;
     box-shadow: 0 1px 3px #000;
-  }
-  
-  .image {
+}
+
+.image {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-  }
-  
-  .image > img {
+}
+
+.image>img {
     display: inline-block;
     vertical-align: middle;
-  }
-  
-  .overlay {
+}
+
+.overlay {
     width: 50%;
     z-index: 1;
-  }
-  
-  .slider {
+}
+
+.slider {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -484,9 +512,9 @@ h1, h2, h3 {
     background-color: red;
     border-radius: 50%;
     cursor: ew-resize;
-  }
+}
 
-  .custom-modal {
+.custom-modal {
     width: 400px;
     padding: 30px 20px 20px 20px;
     background-color: white;
@@ -496,4 +524,63 @@ h1, h2, h3 {
     transform: translate(-50%, -50%);
     text-align: center;
     border-radius: 10px;
-  }
+}
+
+/*---------------------- ImportProject Style ------------------------*/
+.img-field {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust as needed */
+}
+
+.img-item {
+    flex: 0 1 calc(30% - 20px); /* Adjust as needed, 30% for three items in a row with 20px margin */
+    margin: 10px;
+    transition: all 1s;
+}
+
+.img-size {
+    padding: 0 10px;
+}
+
+.img-size img {
+    max-width: 100%;
+    max-height: 230px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition: all 1s;
+}
+
+.img-size img:hover {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.img-item {
+    transition: all 1s;
+    -webkit-filter: grayscale(85%);
+    filter: grayscale(85%);
+    padding-bottom: 20px;
+}
+
+.img-item:hover {
+    transform: scale(1.2);
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.detail-des {
+    float: right;
+}
+
+.detail-title {
+    float: left;
+}
+
+.detail-des, .detail-title {
+    color: #111111;
+}
+.img-item:hover {
+    transform: scale(1.08);
+}
+

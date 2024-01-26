@@ -83,7 +83,7 @@ export default function Gallery() {
 
 
     return (
-        <Box sx={{ maxWidth: '1200px', typography: 'body1', textAlign: "center", margin: "auto" }}>
+        <Box sx={{ maxWidth: '1400px', typography: 'body1', textAlign: "center", margin: "auto" }}>
             <TabContext value={valueGallery}>
                 <h1 style={{paddingTop: '35px'}}>Our Projects</h1>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -94,13 +94,13 @@ export default function Gallery() {
                     </TabList>
                 </Box>
                 <TabPanel value="all" style={{ padding: 0 }}>
-                    <ImportedImg category="" featured="" time="after" index="1"/>
+                    <ImportedImg id="" category="" featured="" time="after" index="1"/>
                 </TabPanel>
                 <TabPanel value="Commercial" style={{ padding: 0 }}>
-                    <ImportedImg category="Commercial" featured="" time="after" index="1"/>
+                    <ImportedImg id="" category="Commercial" featured="" time="after" index="1"/>
                 </TabPanel>
                 <TabPanel value="Residential" style={{ padding: 0 }}>
-                    <ImportedImg category="Residential" featured="" time="after" index="1"/>
+                    <ImportedImg id="" category="Residential" featured="" time="after" index="1"/>
                 </TabPanel>
 
             </TabContext>
